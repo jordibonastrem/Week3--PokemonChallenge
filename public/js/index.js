@@ -1,21 +1,39 @@
 /* eslint-disable no-new */
 import Page from "./Page.js";
-// import PokeApiConnection from "./PokeApiConnection.js";
+import PokeApiConnection from "./PokeApiConnection.js";
 import Pokemon from "./Pokemon.js";
 import PokemonCard from "./PokemonCard.js";
 
 // new Page(document.querySelector("body"));
+const pokemonArr = [];
+const pokeApiConnection = new PokeApiConnection();
 
-// const p = new PokeApiConnection();
-// (async () => {
-//   const pokemons = await p.getPokemons();
-//   console.log(pokemons);
-// })();
+(async () => {
+  const pokemons = await pokeApiConnection.getPokemons();
+  const results = await pokemons.results;
 
-new Page(document.querySelector("body"));
-const pokemon = new Pokemon(1, "pikachu", "wwe.pikachu.png", "water");
-new PokemonCard(document.querySelector(".pokemon-list"), pokemon);
+  await Promise.all(
+    results.map(async (result) => {
+      const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
+      const nextPokemon = new Pokemon(
+        pokemonInfo.id,
+        pokemonInfo.name,
+        pokemonInfo.sprites.other.dream_world.front_default,
+        pokemonInfo.types
+      );
 
-// const pe = new Pokemon(1, "pikachu", "wwe.pikachu.png", "water");
+      pokemonArr.push(nextPokemon);
+    })
+  );
 
-// const p = new PokemonCard("pokemon-list", pe);
+  console.log(pokemonArr);
+  new Page(document.querySelector("body"));
+  pokemonArr.forEach((pokemon) => {
+    new PokemonCard(document.querySelector(".pokemon-list"), pokemon);
+  });
+})();
+
+// pokemonArr.forEach((pokemon) => {
+//   new PokemonCard(document.querySelector(".pokemon-list"), pokemon);
+// });
+// new PokemonCard(document.querySelector(".pokemon-list"), pokemonArr[0]);

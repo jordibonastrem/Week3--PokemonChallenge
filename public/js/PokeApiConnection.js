@@ -9,5 +9,11 @@ class PokeApiConnection {
     const responseJson = await response.json();
     return responseJson;
   }
+
+  async getPokemonInfo(url) {
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    return responseJson;
+  }
 }
 export default PokeApiConnection;

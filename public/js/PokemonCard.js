@@ -5,6 +5,7 @@ class PokemonCard extends Component {
   constructor(parentElement, pokemon) {
     super(parentElement, "pokemon-card", "li");
     this.pokemon = pokemon;
+    // console.log(pokemon);
     this.generateHtml();
   }
 
@@ -12,7 +13,7 @@ class PokemonCard extends Component {
     const html = `  
     
                   <img
-                src="ererer"
+                src="${this.pokemon.imgSrc}"
                 alt="${this.pokemon.name}"
                 class="pokemon-card__img"
               />
