@@ -12,7 +12,7 @@ class PokemonCard extends Component {
     const html = `  
     
                   <img
-                src="ererer"
+                src="${this.pokemon.imgSrc}"
                 alt="${this.pokemon.name}"
                 class="pokemon-card__img"
               />
