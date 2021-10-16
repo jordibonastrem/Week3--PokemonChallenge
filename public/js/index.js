@@ -9,6 +9,8 @@ const pokemonArr = [];
 const pokeApiConnection = new PokeApiConnection();
 
 (async () => {
+  const numberOfPages = await pokeApiConnection.getPokemonsNumPages();
+  console.log(numberOfPages);
   const pokemons = await pokeApiConnection.getPokemons();
   const results = await pokemons.results;
 
@@ -32,7 +34,7 @@ const pokeApiConnection = new PokeApiConnection();
     })
   );
 
-  new Page(document.querySelector("body"));
+  new Page(document.querySelector("body"), numberOfPages);
   pokemonArr.forEach((pokemon) => {
     new PokemonCard(document.querySelector(".cards__list"), pokemon);
   });

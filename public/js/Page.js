@@ -1,9 +1,19 @@
 import Component from "./Component.js";
 
 class Page extends Component {
-  constructor(parentElement) {
+  numberOfPages;
+  constructor(parentElement, numberOfPages) {
     super(parentElement, "main", "section");
+    this.numberOfPages = numberOfPages;
     this.generateHtml();
+    this.generatePagination();
+  }
+
+  generatePagination() {
+    for (let i = 0; i < this.numberOfPages; i++) {
+      const div = document.createElement("div");
+      this.element.querySelector(".pagination").appendChild(div);
+    }
   }
 
   generateHtml() {
@@ -16,7 +26,7 @@ class Page extends Component {
           <ul class="cards__list">
           </ul>
         </section>
-        <div class="pageselection">
+        <div class="pagination">
         </div>
       </main>`;
 
