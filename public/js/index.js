@@ -15,7 +15,7 @@ const pokeApiConnection = new PokeApiConnection();
   await Promise.all(
     results.map(async (result) => {
       const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
-      console.log(pokemonInfo.stats[0].base_stat);
+      // console.log(pokemonInfo.types);
       const nextPokemon = new Pokemon(
         pokemonInfo.id,
         pokemonInfo.name,

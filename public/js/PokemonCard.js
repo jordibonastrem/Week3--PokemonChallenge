@@ -7,6 +7,19 @@ class PokemonCard extends Component {
     this.pokemon = pokemon;
     // console.log(pokemon);
     this.generateHtml();
+    this.getTypes();
+  }
+
+  getTypes() {
+    console.log(this.pokemon.types);
+    this.pokemon.types.forEach((item) => {
+      const span = document.createElement("span");
+      span.textContent = item.type.name;
+      this.element.querySelector(".card__content__types").appendChild(span);
+      // document.querySelector(".card__content__types").appendChild(span);
+      console.log(span);
+      // .console.log(type);
+    });
   }
 
   generateHtml() {
@@ -21,14 +34,13 @@ class PokemonCard extends Component {
                 <img
                   src=${this.pokemon.imgSrc}
                   height="200"
-                  class="card__img"
+                  class="card__content__img"
                 />
-                <h2 class="card__name">${this.pokemon.name}</h2>
-                <div class="card__types">
-                  <span>${this.pokemon.type}</span>
-                  <span>${this.pokemon.type}</span>
+                <h2 class="card__content__name">${this.pokemon.name}</h2>
+                <div class="card__content__types">
+  
                 </div>
-                <div class="stats">
+                <div class="card__content__stats">
                   <div>
                     <h3>${this.pokemon.attack}</h3>
                     <p>Attack</p>

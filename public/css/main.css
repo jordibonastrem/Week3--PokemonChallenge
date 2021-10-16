@@ -61,4 +61,8 @@ body {
   margin-left: auto;
   font-weight: 400;
 }
+
+.card__content__types span {
+  padding: 5px 20px;
+}
 /*# sourceMappingURL=main.css.map */
