@@ -8,7 +8,7 @@ class Component {
     this.element.className = className;
     this.parentElement = parentElement;
 
-    this.parentElement.appendChild(this.element);
+    this.parentElement.append(this.element);
   }
 }
 
