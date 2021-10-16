@@ -15,12 +15,16 @@ const pokeApiConnection = new PokeApiConnection();
   await Promise.all(
     results.map(async (result) => {
       const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
-      console.log(pokemonInfo);
+      console.log(pokemonInfo.stats[0].base_stat);
       const nextPokemon = new Pokemon(
         pokemonInfo.id,
         pokemonInfo.name,
         pokemonInfo.sprites.other.dream_world.front_default,
-        pokemonInfo.types
+        pokemonInfo.types,
+        pokemonInfo.stats[0].base_stat,
+        pokemonInfo.stats[1].base_stat,
+        pokemonInfo.stats[2].base_stat,
+        pokemonInfo.stats[5].base_stat
       );
 
       pokemonArr.push(nextPokemon);

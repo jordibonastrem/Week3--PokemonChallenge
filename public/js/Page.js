@@ -9,6 +9,7 @@ class Page extends Component {
   generateHtml() {
     const html = `     
     <header class="header">
+    <h1 class="main__title">Pokemons</h1>
       </header>
       <main class="main">
         <h1 class="main__title">Pokemons</h1>

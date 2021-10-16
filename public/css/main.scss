@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.main {
+  // display: flex;
+}
+
 body {
   background-color: #eff3ff;
 }
@@ -22,7 +27,7 @@ body {
 .card {
   &__container {
     width: 350px;
-    position: absolute;
+    // position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
