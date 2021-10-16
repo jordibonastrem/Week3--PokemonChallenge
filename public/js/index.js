@@ -15,7 +15,7 @@ const pokeApiConnection = new PokeApiConnection();
   await Promise.all(
     results.map(async (result) => {
       const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
-      // console.log(pokemonInfo.types);
+
       const nextPokemon = new Pokemon(
         pokemonInfo.id,
         pokemonInfo.name,
@@ -32,7 +32,6 @@ const pokeApiConnection = new PokeApiConnection();
     })
   );
 
-  // console.log(pokemonArr);
   new Page(document.querySelector("body"));
   pokemonArr.forEach((pokemon) => {
     new PokemonCard(document.querySelector(".cards__list"), pokemon);
