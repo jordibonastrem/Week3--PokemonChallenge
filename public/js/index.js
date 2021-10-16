@@ -24,7 +24,8 @@ const pokeApiConnection = new PokeApiConnection();
         pokemonInfo.stats[0].base_stat,
         pokemonInfo.stats[1].base_stat,
         pokemonInfo.stats[2].base_stat,
-        pokemonInfo.stats[5].base_stat
+        pokemonInfo.stats[5].base_stat,
+        pokemonInfo.types[0].type.name
       );
 
       pokemonArr.push(nextPokemon);

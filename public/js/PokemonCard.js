@@ -8,17 +8,17 @@ class PokemonCard extends Component {
     // console.log(pokemon);
     this.generateHtml();
     this.getTypes();
+    this.getColor();
   }
 
+  getColor() {
+    this.element.style.background = `radial-gradient(circle at 50% 0,${this.pokemon.color} 36%, #ffffff 36%)`;
+  }
   getTypes() {
-    console.log(this.pokemon.types);
     this.pokemon.types.forEach((item) => {
       const span = document.createElement("span");
       span.textContent = item.type.name;
       this.element.querySelector(".card__content__types").appendChild(span);
-      // document.querySelector(".card__content__types").appendChild(span);
-      console.log(span);
-      // .console.log(type);
     });
   }
 
