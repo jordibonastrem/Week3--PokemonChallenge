@@ -12,23 +12,23 @@ const pokeApiConnection = new PokeApiConnection();
   const pokemons = await pokeApiConnection.getPokemons();
   const results = await pokemons.results;
 
-  results.forEach(async (result) => {
-    const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
-    const nextPokemon = new Pokemon(
-      pokemonInfo.id,
-      pokemonInfo.name,
-      pokemonInfo.sprites.other.dream_world.front_default,
-      pokemonInfo.types
-    );
-    console.log(nextPokemon);
-    pokemonArr.push(nextPokemon);
-  });
+  await Promise.all(
+    results.map(async (result) => {
+      const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
+      const nextPokemon = new Pokemon(
+        pokemonInfo.id,
+        pokemonInfo.name,
+        pokemonInfo.sprites.other.dream_world.front_default,
+        pokemonInfo.types
+      );
 
-  // pokemonArr.forEach((pokemon) => {
-  //   console.log(pokemon);
-  // });
+      pokemonArr.push(nextPokemon);
+    })
+  );
 })();
-
-// new Page(document.querySelector("body"));
-// const pokemon = new Pokemon(1, "pikachu", "wwe.pikachu.png", "water");
-// new PokemonCard(document.querySelector(".pokemon-list"), pokemon);
+console.log(pokemonArr);
+new Page(document.querySelector("body"));
+// pokemonArr.forEach((pokemon) => {
+//   new PokemonCard(document.querySelector(".pokemon-list"), pokemon);
+// });
+new PokemonCard(document.querySelector(".pokemon-list"), pokemonArr[0]);
