@@ -12,7 +12,9 @@ class PokemonCard extends Component {
   }
 
   getColor() {
-    this.element.style.background = `radial-gradient(circle at 50% 0,${this.pokemon.color} 36%, #ffffff 36%)`;
+    this.element.querySelector(
+      ".card__content"
+    ).style.background = `radial-gradient(circle at 50% 0,${this.pokemon.color} 36%, #ffffff 36%)`;
   }
   getTypes() {
     this.pokemon.types.forEach((item) => {
@@ -24,7 +26,7 @@ class PokemonCard extends Component {
 
   generateHtml() {
     const html = ` 
-    <li class="card">
+  
             <div class="card__container">
               <div class="card__content">
                 <p class="card__content__hp">
@@ -56,7 +58,7 @@ class PokemonCard extends Component {
                 </div>
               </div>
             </div>
-    </li>`;
+    `;
 
     this.element.innerHTML = html;
   }
