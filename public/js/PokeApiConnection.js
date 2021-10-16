@@ -15,5 +15,4 @@ p = new PokeApiConnection();
 (async () => {
   const pokemons = await p.getResponseJson();
   console.log(pokemons);
-  // p.getNextPage(pokemons);
 })();
