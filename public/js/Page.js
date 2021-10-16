@@ -1,27 +1,27 @@
-import Component from "./Component";
+import Component from "./Component.js";
 
 class Page extends Component {
-  constructor(parentElement, series) {
-    super(parentElement, "container");
-    this.series = series;
-    console.log(series);
+  constructor(parentElement) {
+    super(parentElement, "main", "section");
+    this.generateHtml();
   }
 
   generateHtml() {
-    const html = `     <header class="header">
-        <nav class="header__nav"></nav>
+    const html = `     
+    <header class="header">
       </header>
       <main class="main">
-        <h1 class="main__title">Browse Pokémon</h1>
+        <h1 class="main__title">Pokemons</h1>
         <section class="pokemon-container">
           <ul class="pokemon-list">
           </ul>
         </section>
-        <div class="pagination">
-          
+        <div class="pageselection">
         </div>
       </main>`;
 
     this.element.innerHTML = html;
   }
 }
+
+export default Page;
