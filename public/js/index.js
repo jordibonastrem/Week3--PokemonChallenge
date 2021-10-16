@@ -29,7 +29,7 @@ const pokeApiConnection = new PokeApiConnection();
   console.log(pokemonArr);
   new Page(document.querySelector("body"));
   pokemonArr.forEach((pokemon) => {
-    new PokemonCard(document.querySelector(".pokemon-list"), pokemon);
+    new PokemonCard(document.querySelector(".cards__list"), pokemon);
   });
 })();
 
