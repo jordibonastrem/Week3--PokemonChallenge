@@ -17,7 +17,7 @@ class PokemonCard extends Component {
                 alt="${this.pokemon.name}"
                 class="pokemon-card__img"
               />
-              <span class="pokemon-card__number">#${this.pokemon.name}</span>
+              <span class="pokemon-card__number">#${this.pokemon.id}</span>
               <span class="pokemon-card__name">${this.pokemon.name}</span>   
    `;
 
