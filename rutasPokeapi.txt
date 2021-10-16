@@ -1,0 +1,2 @@
+local : https://pokedex-jordi.herokuapp.com/pokemon
+pokeApi: 
