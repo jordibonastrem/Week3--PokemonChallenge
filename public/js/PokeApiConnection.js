@@ -1,12 +1,28 @@
 class PokeApiConnection {
   urlApi = "https://pokeapi.co/api/v2/pokemon";
 
-  async getPokemonPage() {
+  async getResponseJson() {
     const response = await fetch(this.urlApi);
-    const pokemons = await response.json();
-    return pokemons;
+    const responseJson = await response.json();
+    return responseJson;
+  }
+
+  getNextPage({ next }) {
+    console.log(next);
+  }
+
+  getPokemons({ results }) {
+    console.log(results);
+    results.forEach(({ name, url }) => {
+      console.log(name, url);
+    });
   }
 }
 
 p = new PokeApiConnection();
-p.getPokemonPage();
+(async () => {
+  const pokemons = await p.getResponseJson();
+  console.log(pokemons);
+  p.getNextPage(pokemons);
+  p.getPokemons(pokemons);
+})();
