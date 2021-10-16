@@ -39,7 +39,7 @@ body {
   }
   &__content {
     position: relative;
-    background: radial-gradient(circle at 50% 0%, green 36%, #ffffff 36%);
+    // background: radial-gradient(circle at 50% 0%, green 36%, #ffffff 36%);
     width: 100%;
     padding: 30px 20px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
@@ -53,6 +53,9 @@ body {
       border-radius: 30px;
       margin-left: auto;
       font-weight: 400;
+    }
+    &__types span {
+      padding: 5px 20px;
     }
   }
 }

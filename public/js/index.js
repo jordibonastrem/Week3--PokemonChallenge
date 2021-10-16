@@ -15,7 +15,7 @@ const pokeApiConnection = new PokeApiConnection();
   await Promise.all(
     results.map(async (result) => {
       const pokemonInfo = await pokeApiConnection.getPokemonInfo(result.url);
-      console.log(pokemonInfo.stats[0].base_stat);
+      // console.log(pokemonInfo.types);
       const nextPokemon = new Pokemon(
         pokemonInfo.id,
         pokemonInfo.name,
@@ -24,7 +24,8 @@ const pokeApiConnection = new PokeApiConnection();
         pokemonInfo.stats[0].base_stat,
         pokemonInfo.stats[1].base_stat,
         pokemonInfo.stats[2].base_stat,
-        pokemonInfo.stats[5].base_stat
+        pokemonInfo.stats[5].base_stat,
+        pokemonInfo.types[0].type.name
       );
 
       pokemonArr.push(nextPokemon);

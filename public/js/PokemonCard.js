@@ -7,11 +7,26 @@ class PokemonCard extends Component {
     this.pokemon = pokemon;
     // console.log(pokemon);
     this.generateHtml();
+    this.getTypes();
+    this.getColor();
+  }
+
+  getColor() {
+    this.element.querySelector(
+      ".card__content"
+    ).style.background = `radial-gradient(circle at 50% 0,${this.pokemon.color} 36%, #ffffff 36%)`;
+  }
+  getTypes() {
+    this.pokemon.types.forEach((item) => {
+      const span = document.createElement("span");
+      span.textContent = item.type.name;
+      this.element.querySelector(".card__content__types").appendChild(span);
+    });
   }
 
   generateHtml() {
     const html = ` 
-    <li class="card">
+  
             <div class="card__container">
               <div class="card__content">
                 <p class="card__content__hp">
@@ -21,14 +36,13 @@ class PokemonCard extends Component {
                 <img
                   src=${this.pokemon.imgSrc}
                   height="200"
-                  class="card__img"
+                  class="card__content__img"
                 />
-                <h2 class="card__name">${this.pokemon.name}</h2>
-                <div class="card__types">
-                  <span>${this.pokemon.type}</span>
-                  <span>${this.pokemon.type}</span>
+                <h2 class="card__content__name">${this.pokemon.name}</h2>
+                <div class="card__content__types">
+  
                 </div>
-                <div class="stats">
+                <div class="card__content__stats">
                   <div>
                     <h3>${this.pokemon.attack}</h3>
                     <p>Attack</p>
@@ -44,7 +58,7 @@ class PokemonCard extends Component {
                 </div>
               </div>
             </div>
-    </li>`;
+    `;
 
     this.element.innerHTML = html;
   }
