@@ -12,7 +12,6 @@ class Page extends Component {
     <h1 class="main__title">Pokemons</h1>
       </header>
       <main class="main">
-        <h1 class="main__title">Pokemons</h1>
         <section class="cards">
           <ul class="cards__list">
           </ul>
