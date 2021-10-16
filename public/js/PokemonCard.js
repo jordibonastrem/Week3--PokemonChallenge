@@ -3,7 +3,7 @@ import Component from "./Component.js";
 class PokemonCard extends Component {
   pokemon;
   constructor(parentElement, pokemon) {
-    super(parentElement, "pokemon-card", "li");
+    super(parentElement, "card", "li");
     this.pokemon = pokemon;
     // console.log(pokemon);
     this.generateHtml();
@@ -14,11 +14,12 @@ class PokemonCard extends Component {
     
                   <img
                 src="${this.pokemon.imgSrc}"
-                alt="${this.pokemon.name}"
-                class="pokemon-card__img"
+                height="200"
+                class="card__img"
               />
-              <span class="pokemon-card__number">#${this.pokemon.name}</span>
-              <span class="pokemon-card__name">${this.pokemon.name}</span>   
+              <h2 class="card__name">${this.pokemon.name}</h2>
+              <span class="card__number">#${this.pokemon.id}</span>
+         
    `;
 
     this.element.innerHTML = html;
