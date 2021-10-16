@@ -5,7 +5,7 @@ class PokemonCard extends Component {
   constructor(parentElement, pokemon) {
     super(parentElement, "card", "li");
     this.pokemon = pokemon;
-    // console.log(pokemon);
+
     this.generateHtml();
     this.getTypes();
     this.getColor();
@@ -15,6 +15,11 @@ class PokemonCard extends Component {
     this.element.querySelector(
       ".card__content"
     ).style.background = `radial-gradient(circle at 50% 0,${this.pokemon.color} 36%, #ffffff 36%)`;
+    this.element
+      .querySelectorAll(".card__content__types span")
+      .forEach((spanTypeColor) => {
+        spanTypeColor.style.backgroundColor = this.pokemon.color;
+      });
   }
   getTypes() {
     this.pokemon.types.forEach((item) => {
@@ -38,7 +43,7 @@ class PokemonCard extends Component {
                   height="200"
                   class="card__content__img"
                 />
-                <h2 class="card__content__name">${this.pokemon.name}</h2>
+                <h2 class="card__content__name">${this.pokemon.name.toUpperCase()}</h2>
                 <div class="card__content__types">
   
                 </div>

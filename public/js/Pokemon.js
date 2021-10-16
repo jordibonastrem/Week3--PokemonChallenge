@@ -36,7 +36,6 @@ class Pokemon {
     this.defense = defense;
     this.speed = speed;
     this.color = this.typeColor[color];
-    console.log(this.color);
   }
 }
 export default Pokemon;
