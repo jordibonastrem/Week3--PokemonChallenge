@@ -17,6 +17,9 @@ async function newPokemonArray(prevornext = "next") {
   } else {
     pageNumber--;
   }
+  if (pageNumber < 0) {
+    return;
+  }
 
   const pokemonArr = [];
   const pokemons = await pokeApiConnection.getPokemons(`${pageNumber * 10}`);
@@ -48,14 +51,14 @@ async function newPokemonArray(prevornext = "next") {
 
   new PaginationComponent(
     page.element.querySelector(".pagination"),
-    "pagination__next",
-    ">",
+    "pagination__previous",
+    "<",
     newPokemonArray
   );
   new PaginationComponent(
     page.element.querySelector(".pagination"),
-    "pagination__previous",
-    "<",
+    "pagination__next",
+    ">",
     newPokemonArray
   );
 
