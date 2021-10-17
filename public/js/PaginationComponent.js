@@ -1,12 +1,8 @@
-import Component from "./Component";
+import Component from "./Component.js";
 
 class PaginationComponent extends Component {
-  constructor(parentElement, className) {
-    super(parentElement, className, "button");
-  }
-
-  generateHtml() {
-    document.querySelector(".pagination").appendChild(this.element);
+  constructor(parentElement, className, innerHtml) {
+    super(parentElement, className, "button", innerHtml);
   }
 }
 

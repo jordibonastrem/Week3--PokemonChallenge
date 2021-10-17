@@ -4,15 +4,6 @@ class Page extends Component {
   constructor(parentElement) {
     super(parentElement, "main", "section");
     this.generateHtml();
-    this.paginationButtonsSetup();
-  }
-
-  paginationButtonsSetup() {
-    const nextButton = this.element.querySelector(".pagination__next");
-    console.log(nextButton);
-    nextButton.addEventListener("click", () => {
-      console.log("e");
-    });
   }
 
   generateHtml() {

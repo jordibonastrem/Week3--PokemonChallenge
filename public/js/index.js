@@ -35,11 +35,21 @@ const pokeApiConnection = new PokeApiConnection();
     })
   );
 
-  new Page(document.querySelector("body"));
+  const page = new Page(document.querySelector("body"));
   pokemonArr.forEach((pokemon) => {
     new PokemonCard(document.querySelector(".cards__list"), pokemon);
   });
-  new Pag();
+
+  new PaginationComponent(
+    page.element.querySelector(".pagination"),
+    "pagination__previous",
+    "<"
+  );
+  new PaginationComponent(
+    page.element.querySelector(".pagination"),
+    "pagination__next",
+    ">"
+  );
 })();
 
 // pokemonArr.forEach((pokemon) => {
