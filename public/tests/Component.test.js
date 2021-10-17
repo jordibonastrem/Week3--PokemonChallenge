@@ -10,7 +10,7 @@ describe("Given a component class", () => {
       const tag = "p";
 
       // Act
-      new Componente(container, className, tag);
+      new Component(container, className, tag);
       const pFound = container.querySelector("p.patata");
 
       // Assert
@@ -25,7 +25,7 @@ describe("Given a component class", () => {
       const className = "jordi";
 
       // Act
-      new Componente(container, className);
+      new Component(container, className);
       const dFound = container.querySelector("div.jordi");
 
       // Assert
