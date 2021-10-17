@@ -1,19 +1,18 @@
 import Component from "./Component.js";
 
 class Page extends Component {
-  numberOfPages;
-  constructor(parentElement, numberOfPages) {
+  constructor(parentElement) {
     super(parentElement, "main", "section");
-    this.numberOfPages = numberOfPages;
     this.generateHtml();
-    this.generatePagination();
+    this.paginationButtonsSetup();
   }
 
-  generatePagination() {
-    for (let i = 0; i < this.numberOfPages; i++) {
-      const div = document.createElement("div");
-      this.element.querySelector(".pagination").appendChild(div);
-    }
+  paginationButtonsSetup() {
+    const nextButton = this.element.querySelector(".pagination__next");
+    console.log(nextButton);
+    nextButton.addEventListener("click", () => {
+      console.log("e");
+    });
   }
 
   generateHtml() {
@@ -27,6 +26,8 @@ class Page extends Component {
           </ul>
         </section>
         <div class="pagination">
+        <button class="pagination__previous">&lt;</button>
+        <button class="pagination__next">&gt;</button>
         </div>
       </main>`;
 

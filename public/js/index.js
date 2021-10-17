@@ -3,6 +3,7 @@ import Page from "./Page.js";
 import PokeApiConnection from "./PokeApiConnection.js";
 import Pokemon from "./Pokemon.js";
 import PokemonCard from "./PokemonCard.js";
+import PaginationComponent from "./PaginationComponent.js";
 
 // new Page(document.querySelector("body"));
 const pokemonArr = [];
@@ -34,10 +35,11 @@ const pokeApiConnection = new PokeApiConnection();
     })
   );
 
-  new Page(document.querySelector("body"), numberOfPages);
+  new Page(document.querySelector("body"));
   pokemonArr.forEach((pokemon) => {
     new PokemonCard(document.querySelector(".cards__list"), pokemon);
   });
+  new Pag();
 })();
 
 // pokemonArr.forEach((pokemon) => {
