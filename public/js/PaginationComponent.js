@@ -1,8 +1,14 @@
 import Component from "./Component.js";
 
 class PaginationComponent extends Component {
-  constructor(parentElement, className, innerHtml) {
+  actionOnClick;
+  constructor(parentElement, className, innerHtml, actionOnClick) {
     super(parentElement, className, "button", innerHtml);
+    this.actionOnClick = actionOnClick;
+  }
+
+  setupEvents() {
+    this.element.addEventListener("click", this.actionOnClick);
   }
 }
 

@@ -17,8 +17,6 @@ class Page extends Component {
           </ul>
         </section>
         <div class="pagination">
-        <button class="pagination__previous">&lt;</button>
-        <button class="pagination__next">&gt;</button>
         </div>
       </main>`;
 
