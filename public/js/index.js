@@ -9,10 +9,16 @@ import PaginationComponent from "./PaginationComponent.js";
 const pokemonArr = [];
 const pokeApiConnection = new PokeApiConnection();
 
+async function newPage(pageNumber) {
+  const pokemons = await pokeApiConnection.getPokemons(`${pageNumber * 10}`);
+  const results = await pokemons.results;
+  console.log("eee");
+  console.log(results);
+  return pokemons;
+}
+
 (async () => {
-  const numberOfPages = await pokeApiConnection.getPokemonsNumPages();
-  console.log(numberOfPages);
-  const pokemons = await pokeApiConnection.getPokemons();
+  const pokemons = await newPage("3");
   const results = await pokemons.results;
 
   await Promise.all(
@@ -48,7 +54,8 @@ const pokeApiConnection = new PokeApiConnection();
   new PaginationComponent(
     page.element.querySelector(".pagination"),
     "pagination__next",
-    ">"
+    ">",
+    newPage
   );
 })();
 
