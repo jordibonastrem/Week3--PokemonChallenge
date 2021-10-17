@@ -62,7 +62,8 @@ async function newPokemonArray(prevornext = "next", pokedex = false) {
   const element = document
     .querySelector(".active")
     .addEventListener("click", () => {
-      new PokedexConnection(pokemonsAdedList);
+      pokedex = new PokedexConnection(pokemonsAdedList);
+      pokedex.postPokemons();
     });
 
   new PaginationComponent(

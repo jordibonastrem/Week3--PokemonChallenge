@@ -14,6 +14,7 @@ class PokedexConnection {
   }
 
   async postPokemons() {
+    console.log("post");
     await fetch(this.url, {
       method: "POST",
       headers: {
