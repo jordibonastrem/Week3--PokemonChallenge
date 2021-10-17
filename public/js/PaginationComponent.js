@@ -5,6 +5,7 @@ class PaginationComponent extends Component {
   constructor(parentElement, className, innerHtml, actionOnClick) {
     super(parentElement, className, "button", innerHtml);
     this.actionOnClick = actionOnClick;
+    this.setupEvents();
   }
 
   setupEvents() {

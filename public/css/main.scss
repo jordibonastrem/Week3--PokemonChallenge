@@ -61,10 +61,15 @@ body {
     }
   }
 }
-
+button {
+  height: 200px;
+  width: 200px;
+}
 .pagination {
   &__previous {
   }
   &__next {
+    height: 200px;
+    width: 200px;
   }
 }
