@@ -9,7 +9,7 @@ class PokemonCard extends Component {
     this.generateHtml();
     this.getTypes();
     this.getColor();
-    this.events();
+    // this.events();
   }
 
   getColor() {
@@ -30,12 +30,12 @@ class PokemonCard extends Component {
     });
   }
 
-  events() {
-    const buttonAdd = this.element.querySelector(".button__add");
-    buttonAdd.addEventListener("click", () => {
-      console.log("eee");
-    });
-  }
+  // events() {
+  //   // const buttonAdd = this.element.querySelector(".button__add");
+  //   // buttonAdd.addEventListener("click", () => {
+  //   //   console.log("eee");
+  //   // });
+  // }
   generateHtml() {
     const html = ` 
   
