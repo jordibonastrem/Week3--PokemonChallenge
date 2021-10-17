@@ -9,9 +9,18 @@ class Page extends Component {
   generateHtml() {
     const html = `     
     <header class="header">
-    <h1 class="main__title">Pokemons</h1>
+    
       </header>
       <main class="main">
+          <nav>
+      <div class="heading">
+        <h4>Pokemons</h4>
+      </div>
+      <ul class="nav-links">
+        <li><a class="active" href="pokedex.html">Pokedex</a></li>
+        <li><a class="active" href="index.html">PokeApi</a></li>
+      </ul>
+    </nav>
         <section class="cards">
           <ul class="cards__list">
           </ul>

@@ -9,6 +9,7 @@ class PokemonCard extends Component {
     this.generateHtml();
     this.getTypes();
     this.getColor();
+    this.events();
   }
 
   getColor() {
@@ -29,11 +30,15 @@ class PokemonCard extends Component {
     });
   }
 
+  events() {
+    this.events.querySelector();
+  }
   generateHtml() {
     const html = ` 
   
             <div class="card__container">
               <div class="card__content">
+              <button>add </button>
                 <p class="card__content__hp">
                   <span>HP</span>
                   ${this.pokemon.hp}
