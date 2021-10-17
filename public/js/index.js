@@ -45,9 +45,12 @@ async function newPokemonArray(prevornext = "next") {
     })
   );
   const page = new Page(document.querySelector("body"));
+  let card = null;
   pokemonArr.forEach((pokemon) => {
-    new PokemonCard(document.querySelector(".cards__list"), pokemon);
+    card = new PokemonCard(document.querySelector(".cards__list"), pokemon);
   });
+
+  console.log(card.element);
 
   new PaginationComponent(
     page.element.querySelector(".pagination"),
@@ -70,6 +73,11 @@ async function newPokemonArray(prevornext = "next") {
   });
   buttonPrev.addEventListener("click", () => {
     newPokemonArray("prev");
+  });
+
+  const buttonAdd = document.querySelector(".button__add");
+  buttonAdd.addEventListener("click", () => {
+    console.log("eee");
   });
 }
 

@@ -31,14 +31,17 @@ class PokemonCard extends Component {
   }
 
   events() {
-    this.events.querySelector();
+    const buttonAdd = this.element.querySelector(".button__add");
+    buttonAdd.addEventListener("click", () => {
+      console.log("eee");
+    });
   }
   generateHtml() {
     const html = ` 
   
             <div class="card__container">
               <div class="card__content">
-              <button>add </button>
+              <button class="button__add">add</button>
                 <p class="card__content__hp">
                   <span>HP</span>
                   ${this.pokemon.hp}
