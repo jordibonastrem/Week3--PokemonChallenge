@@ -62,7 +62,7 @@ async function newPokemonArray(prevornext = "next", pokedex = false) {
   const element = document
     .querySelector(".active")
     .addEventListener("click", () => {
-      console.log("ERERE");
+      new PokedexConnection(pokemonsAdedList);
     });
 
   new PaginationComponent(
@@ -77,7 +77,6 @@ async function newPokemonArray(prevornext = "next", pokedex = false) {
     ">",
     newPokemonArray
   );
-  new PokedexConnection(pokemonsAdedList);
 
   const buttonNext = document.querySelector(".pagination__next");
   const buttonPrev = document.querySelector(".pagination__previous");
@@ -88,10 +87,6 @@ async function newPokemonArray(prevornext = "next", pokedex = false) {
   buttonPrev.addEventListener("click", () => {
     newPokemonArray("prev");
   });
-}
-
-async function Pokedex() {
-  newPokemonArray;
 }
 
 (async () => {
