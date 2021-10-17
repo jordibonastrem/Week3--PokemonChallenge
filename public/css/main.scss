@@ -61,15 +61,59 @@ body {
     }
   }
 }
-button {
-  height: 200px;
-  width: 200px;
-}
+
 .pagination {
   &__previous {
+    height: 200px;
+    width: 200px;
   }
   &__next {
     height: 200px;
     width: 200px;
   }
+}
+
+.body-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: teal;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30;
+}
+.nav-links li {
+  list-style: none;
+}
+.heading {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.nav-links {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 14px 16px;
+}
+.nav-links li a:hover:not(.active) {
+  background-color: lightseagreen;
+}
+.nav-links li a.active {
+  background-color: #4caf50;
+}
+.button__add {
+  height: 50px;
+  width: 50px;
 }
