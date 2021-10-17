@@ -122,7 +122,7 @@ nav {
   letter-spacing: 5px;
 }
 
-.nav-links {
+.button-nav {
   color: white;
   text-decoration: none;
   letter-spacing: 3px;
@@ -131,11 +131,11 @@ nav {
   padding: 14px 16px;
 }
 
-.nav-links li a:hover:not(.active) {
+.button-nav li a:hover:not(.active) {
   background-color: lightseagreen;
 }
 
-.nav-links li a.active {
+.button-nav li a.active {
   background-color: #4caf50;
 }
 

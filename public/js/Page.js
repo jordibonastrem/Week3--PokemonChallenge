@@ -17,8 +17,8 @@ class Page extends Component {
         <h4>Pokemons</h4>
       </div>
       <ul class="nav-links">
-        <li><a class="active" href="pokedex.html">Pokedex</a></li>
-        <li><a class="active" href="index.html">PokeApi</a></li>
+        <button class="button-nav active">Pokedex</button>
+        <button class="button-nav active">PokeApi</button>
       </ul>
     </nav>
         <section class="cards">

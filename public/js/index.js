@@ -4,11 +4,13 @@ import PokeApiConnection from "./PokeApiConnection.js";
 import Pokemon from "./Pokemon.js";
 import PokemonCard from "./PokemonCard.js";
 import PaginationComponent from "./PaginationComponent.js";
+import PokedexConnection from "./PokedexConnection.js";
 
 const pokeApiConnection = new PokeApiConnection();
 let pageNumber = "0";
+const pokemonsAdedList = [];
 
-async function newPokemonArray(prevornext = "next") {
+async function newPokemonArray(prevornext = "next", pokedex = false) {
   if (pageNumber != 0) {
     document.querySelector(".main").remove();
   }
@@ -45,14 +47,24 @@ async function newPokemonArray(prevornext = "next") {
     })
   );
   const page = new Page(document.querySelector("body"));
-  let card = null;
   pokemonArr.forEach((pokemon) => {
-    card = new PokemonCard(document.querySelector(".cards__list"), pokemon);
+    const card = new PokemonCard(
+      document.querySelector(".cards__list"),
+      pokemon
+    );
     const buttonAdd = card.element.querySelector(".button__add");
     buttonAdd.addEventListener("click", () => {
-      console.log("eee");
+      pokemonsAdedList.push(pokemon);
+      console.log(pokemonsAdedList);
     });
   });
+
+  const element = document
+    .querySelector(".active")
+    .addEventListener("click", () => {
+      pokedex = new PokedexConnection(pokemonsAdedList);
+      pokedex.postPokemons();
+    });
 
   new PaginationComponent(
     page.element.querySelector(".pagination"),
