@@ -16,7 +16,7 @@ class Page extends Component {
           <ul class="cards__list">
           </ul>
         </section>
-        <div class="pageselection">
+        <div class="pagination">
         </div>
       </main>`;
 
